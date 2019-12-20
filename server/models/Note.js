@@ -7,7 +7,7 @@ const ObjectId = Schema.Types.ObjectId;
 const Note = new Schema(
   {
     content: { type: String, required: true },
-    bug: { type: ObjectId, ref: "Bug", required: true },
+    bugId: { type: ObjectId, ref: "Bug", required: true },
     reportedBy: { type: String, required: true }, //The provided name for who made the note
     flagged: { type: String, enum: ["pending", "completed", "rejected"] }
   },
