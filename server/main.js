@@ -4,6 +4,7 @@ import cors from "cors";
 import bp from "body-parser";
 import DbContext from "./db/dbConfig";
 import BugController from "./controllers/BugsController";
+import NoteController from "./controllers/NotesController";
 // TODO Import controllers
 
 const port = process.env.PORT || 3000;
@@ -39,6 +40,7 @@ server.use(bp.json());
 // TODO Add routers here
 //NOTE remember the forward slash at the start of your path!
 server.use("/api/bugs", new BugController().router);
+server.use("/api/notes", new NoteController().router);
 
 //NOTE Everything below this line always stays the same
 
