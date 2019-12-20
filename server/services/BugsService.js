@@ -16,6 +16,29 @@ class BugService {
     }
     return data;
   }
+
+  async createBug(rawData) {
+    let data = await _repository.create(rawData);
+    return data;
+  }
+
+  async editBug(id, update) {
+    let data = await _repository.findOneAndUpdate({ _id: id }, update, {
+      new: true
+    });
+    if (!data) {
+      throw new ApiError("Invalid ID", 400);
+    }
+    return data;
+  }
+
+  async delete(id) {
+    // NOTE soft delete
+    let data = await _repository.findOneAndUpdate({ _d: id }, { close: true });
+    if (!data) {
+      throw new ApiError("Invalid ID", 400);
+    }
+  }
 }
 
 const bugService = new BugService();

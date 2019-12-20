@@ -13,4 +13,4 @@ const Bug = new Schema(
   { timestamps: true, toJSON: { virtuals: true } }
 );
 
-export default bug;
+export default Bug;
