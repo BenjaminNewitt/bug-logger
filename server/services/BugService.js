@@ -29,12 +29,13 @@ class BugService {
     if (!data) {
       throw new ApiError("Invalid ID", 400);
     }
+
     return data;
   }
 
-  async delete(id) {
+  async deleteBug(id) {
     // NOTE soft delete
-    let data = await _repository.findOneAndUpdate({ _d: id }, { close: true });
+    let data = await _repository.findOneAndUpdate({ _id: id }, { close: true });
     if (!data) {
       throw new ApiError("Invalid ID", 400);
     }

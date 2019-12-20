@@ -1,5 +1,5 @@
 import express from "express";
-import bugService from "../services/BugsService";
+import bugService from "../services/BugService";
 
 export default class BugController {
   constructor() {
@@ -10,7 +10,7 @@ export default class BugController {
       .get("/:id", this.getById)
       .post("", this.createBug)
       .put("/:id", this.editBug)
-      .delete("/:id", this.delete);
+      .delete("/:id", this.deleteBug);
   }
 
   async getAll(req, res, next) {
@@ -49,9 +49,9 @@ export default class BugController {
     }
   }
 
-  async delete(req, res, next) {
+  async deleteBug(req, res, next) {
     try {
-      await bugService.delete(req.params.id);
+      await bugService.deleteBug(req.params.id);
       return res.send("Successfully Closed");
     } catch (error) {
       next(error);
