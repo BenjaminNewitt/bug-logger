@@ -23,22 +23,31 @@ class BugService {
   }
 
   async editBug(id, update) {
-    let data = await _repository.findOneAndUpdate({ _id: id }, update, {
-      new: true
-    });
+    let data = await _repository.findById(id);
+
     if (!data) {
       throw new ApiError("Invalid ID", 400);
     }
+    if (data.closed == true) {
+      throw new ApiError("Bug Can't Be Edited", 400);
+    }
+
+    data = await _repository.findOneAndUpdate({ _id: id }, update, {
+      new: true
+    });
 
     return data;
   }
 
   async deleteBug(id) {
-    // NOTE soft delete
-    let data = await _repository.findOneAndUpdate({ _id: id }, { close: true });
+    let data = await _repository.findById(id);
     if (!data) {
       throw new ApiError("Invalid ID", 400);
     }
+    if (data.closed == true) {
+      throw new ApiError("Bug Already Deleted", 400);
+    }
+    data = await _repository.findOneAndUpdate({ _id: id }, { closed: true });
   }
 }
 
