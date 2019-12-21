@@ -8,13 +8,40 @@
   <body class="row">
     <div class="col-12">
       <form @submit.prevent="createBug">
-        <input type="text" v-model="newBug.title" placeholder="bug title..." required />
-        <input type="text" v-model="newBug.name" placeholder="your name..." required />
-        <input type="text" v-model="newBug.title" placeholder="bug title..." required />
         <div class="form-group">
-          <label for="bug-description"></label>
-          <textarea class="form-control" id="bug-description" rows="3"></textarea>
+          <label for="bug-title">bug title</label>
+          <input
+            type="text"
+            v-model="newBug.title"
+            class="form-control"
+            id="bug-title"
+            placeholder="title..."
+            required
+          />
         </div>
+        <div class="form-group">
+          <label for="bug-reported-by">reported by</label>
+          <input
+            type="text"
+            v-model="newBug.reportedBy"
+            class="form-control"
+            id="bug-reported-by"
+            placeholder="name..."
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="bug-description">bug description</label>
+          <textarea
+            class="form-control"
+            v-model="newBug.description"
+            id="bug-description"
+            rows="3"
+            placeholder="bug description..."
+            required
+          ></textarea>
+        </div>
+        <button class="btn btn-success" type="submit">Submit bug report</button>
       </form>
     </div>
     <div class="col-10 m-auto">
