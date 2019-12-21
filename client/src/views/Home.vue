@@ -21,8 +21,8 @@
           <h4>Last Modified</h4>
         </div>
       </div>
-      <div class="row bugs">
-        <div class="col-12"></div>
+      <div class="row">
+        <div class="col-12">{{ bugs }}</div>
       </div>
     </div>
   </body>
@@ -32,5 +32,15 @@
 
 <script>
 // @ is an alias to /src
-export default {};
+export default {
+  name: "bug",
+  mounted() {
+    this.$store.dispatch("getBugs");
+  },
+  computed: {
+    bugs() {
+      return this.$store.state.bugs;
+    }
+  }
+};
 </script>
