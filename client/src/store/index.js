@@ -15,7 +15,16 @@ export default new Vuex.Store({
     activeBug: {},
     notes: []
   },
-  mutations: {},
-  actions: {},
+  mutations: {
+    setAllBugs(state, data) {
+      state.bugs = data;
+    }
+  },
+  actions: {
+    async getBugs({ commit, dispatch }) {
+      let res = await _api.get("bugs");
+      commit("setAllBugs", res.data);
+    }
+  },
   modules: {}
 });
