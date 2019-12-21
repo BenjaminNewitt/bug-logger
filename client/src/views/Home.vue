@@ -1,11 +1,14 @@
 <template>
 <main class="home container-fluid">
   <header class="row">
-    <div class="col-4">
+    <div class="col-12 col-md-6">
       <h1>Current Bugs</h1>
     </div>
   </header>
   <body class="row">
+    <div class="col-12">
+      <form @submit.prevent="createBug"></form>
+    </div>
     <div class="col-10 m-auto">
       <div class="row">
         <div class="col-3">
