@@ -22,7 +22,7 @@
         </div>
       </div>
       <div class="row bugs">
-        <div class="col-12">{{ bugs }}</div>
+        <div class="col-12"></div>
       </div>
     </div>
   </body>
@@ -32,10 +32,5 @@
 
 <script>
 // @ is an alias to /src
-export default {
-  name: "bug",
-  mounted() {},
-  methods: {},
-  computed: {}
-};
+export default {};
 </script>

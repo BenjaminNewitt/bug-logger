@@ -4,9 +4,8 @@ import axios from "axios";
 
 let _api = axios.create({
   baseURL: "https://localhost:3000/api",
-  timeout: 5000
+  timeout: 3000
 });
-
 Vue.use(Vuex);
 
 export default new Vuex.Store({
