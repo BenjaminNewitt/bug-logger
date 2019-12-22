@@ -60,10 +60,8 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-12">
-          <div class="row" v-for="bug in bugs" :key="bug.id">
-            <bug-component :bugData="bug" />
-          </div>
+        <div class="col-12" v-for="bug in bugs" :key="bug.id">
+          <bug-component :bugData="bug" />
         </div>
       </div>
     </div>

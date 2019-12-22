@@ -25,6 +25,7 @@ export default new Vuex.Store({
   actions: {
     async getBugs({ commit, dispatch }) {
       let res = await _api.get("bugs");
+      console.log("bug", res.data);
       commit("setAllBugs", res.data);
     },
     async createBug({ commit, dispatch }, bug) {
