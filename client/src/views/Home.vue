@@ -6,7 +6,7 @@
     </div>
   </header>
   <body class="row">
-    <div class="col-12">
+    <div class="col-6">
       <form @submit.prevent="createBug">
         <div class="form-group">
           <label for="bug-title">bug title</label>
@@ -60,7 +60,11 @@
         </div>
       </div>
       <div class="row">
-        <div class="col-12">{{ bugs }}</div>
+        <div class="col-12">
+          <div class="row" v-for="bug in bugs" :key="bug.id">
+            <bug-component :bugData="bug" />
+          </div>
+        </div>
       </div>
     </div>
   </body>
@@ -70,6 +74,7 @@
 
 <script>
 // @ is an alias to /src
+import BugComponent from "@/components/Bug";
 export default {
   name: "bug",
   mounted() {
@@ -100,6 +105,9 @@ export default {
     bugs() {
       return this.$store.state.bugs;
     }
+  },
+  components: {
+    BugComponent
   }
 };
 </script>
