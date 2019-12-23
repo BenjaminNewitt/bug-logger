@@ -8,7 +8,15 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name: "BugDetails",
+  mounted() {},
+  computed: {
+    bug() {
+      return this.$store.state.activeBug;
+    }
+  }
+};
 </script>
 
 <style>
