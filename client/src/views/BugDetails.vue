@@ -59,6 +59,12 @@ export default {
       }
     };
   },
+  methods: {
+    createNote() {
+      let ntoe = { ...this.newNote};
+      this.$store.dispatch("createNote", note)
+    }
+  }
   computed: {
     bug() {
       return this.$store.state.activeBug;
