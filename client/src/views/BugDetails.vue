@@ -20,7 +20,7 @@
           </div>
           <div class="col-12">
             <h1>Notes</h1>
-            <form>
+            <form @submit.prevent="createNote">
               <div class="form-group">
                 <label for="note-reported-by">reported by</label>
                 <input
@@ -43,6 +43,7 @@
                   required
                 />
               </div>
+              <button class="btn btn-success" type="submit">Submit comment</button>
             </form>
           </div>
           <div class="col-12">
@@ -72,7 +73,7 @@ export default {
   },
   methods: {
     createNote() {
-      let ntoe = { ...this.newNote };
+      let note = { ...this.newNote };
       this.$store.dispatch("createNote", note);
     }
   },
