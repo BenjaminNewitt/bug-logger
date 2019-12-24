@@ -42,8 +42,7 @@ export default {
       return this.$store.state.activeBug;
     },
     note() {
-      return;
-      this.$store.state.notes;
+      return this.$store.state.notes;
     }
   }
 };
