@@ -20,6 +20,19 @@
           </div>
           <div class="col-12">
             <h1>Notes</h1>
+            <form>
+              <div class="form-group">
+                <label for="note-reported-by">reported by</label>
+                <input
+                  type="text"
+                  v-model="newNote.reportedBy"
+                  class="form-control"
+                  id="note-reported-by"
+                  placeholder="name..."
+                  required
+                />
+              </div>
+            </form>
           </div>
           <div class="col-12">
             <p>{{ note }}</p>
@@ -36,6 +49,15 @@ export default {
   mounted() {
     this.$store.dispatch("getBugById", this.$route.params.id);
     this.$store.dispatch("getNotesByBugId", this.$route.params.id);
+  },
+  data() {
+    return {
+      newNote: {
+        content: "",
+        reportedBy: "",
+        bug: this.$route.params.id
+      }
+    };
   },
   computed: {
     bug() {
