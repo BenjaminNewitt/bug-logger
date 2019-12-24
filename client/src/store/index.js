@@ -20,6 +20,9 @@ export default new Vuex.Store({
     },
     addBug(state, bug) {
       state.bugs.push(bug);
+    },
+    setActiveBug(state, bug) {
+      state.activeBug = bug;
     }
   },
   actions: {
