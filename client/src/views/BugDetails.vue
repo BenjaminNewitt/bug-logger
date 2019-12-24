@@ -21,6 +21,9 @@
           <div class="col-12">
             <h1>Notes</h1>
           </div>
+          <div class="col-12">
+            <p>{{ note }}</p>
+          </div>
         </div>
       </div>
     </main>
@@ -32,10 +35,15 @@ export default {
   name: "BugDetails",
   mounted() {
     this.$store.dispatch("getBugById", this.$route.params.id);
+    this.$store.dispatch("getNotesByBugId", this.$route.params.id);
   },
   computed: {
     bug() {
       return this.$store.state.activeBug;
+    },
+    note() {
+      return;
+      this.$store.state.notes;
     }
   }
 };

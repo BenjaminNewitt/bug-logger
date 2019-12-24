@@ -40,7 +40,7 @@ export default new Vuex.Store({
     },
     async getNotesByBugId({ commit, dispatch }, id) {
       let res = await _api.get("bugs/:id/notes");
-      commit("setNotesByBugId", res.data);
+      commit("setNotes", res.data);
     },
     async createBug({ commit, dispatch }, bug) {
       let res = await _api.post("bugs", bug);
