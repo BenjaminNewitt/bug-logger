@@ -32,6 +32,17 @@
                   required
                 />
               </div>
+              <div class="form-group">
+                <label for="note-content">Comment</label>
+                <input
+                  type="text"
+                  v-model="newNote.content"
+                  class="form-control"
+                  id="note-content"
+                  placeholder="comment here..."
+                  required
+                />
+              </div>
             </form>
           </div>
           <div class="col-12">
@@ -61,10 +72,10 @@ export default {
   },
   methods: {
     createNote() {
-      let ntoe = { ...this.newNote};
-      this.$store.dispatch("createNote", note)
+      let ntoe = { ...this.newNote };
+      this.$store.dispatch("createNote", note);
     }
-  }
+  },
   computed: {
     bug() {
       return this.$store.state.activeBug;
