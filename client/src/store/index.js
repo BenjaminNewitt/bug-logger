@@ -26,6 +26,9 @@ export default new Vuex.Store({
     },
     setNotes(state, data) {
       state.notes = data;
+    },
+    addNote(state, data) {
+      state.notes.push(data);
     }
   },
   actions: {
@@ -47,6 +50,10 @@ export default new Vuex.Store({
     async createBug({ commit, dispatch }, bug) {
       let res = await _api.post("bugs", bug);
       commit("addBug", res.data);
+    },
+    async createNote({ commit, dispatch }, note) {
+      let res = await _api.post("notes", note);
+      commit("addNote", res.data);
     }
   },
   modules: {}
