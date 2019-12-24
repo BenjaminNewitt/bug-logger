@@ -12,8 +12,14 @@
             <p>Reported by</p>
             <h2>{{bug.reportedBy}}</h2>
           </div>
-          <div class="col-12">
+          <div class="col-12 border">
             <p>{{ bug.description }}</p>
+          </div>
+          <div class="col-4">
+            <button class="btn btn-danger">Close</button>
+          </div>
+          <div class="col-12">
+            <h1>Notes</h1>
           </div>
         </div>
       </div>
