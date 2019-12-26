@@ -5,8 +5,8 @@ import Note from "../models/Note";
 const _repository = mongoose.model("Note", Note);
 
 class NoteService {
-  async getNotesByBugId(bugId) {
-    let data = await _repository.find({ bug: bugId });
+  async getNotesByBugId(id) {
+    let data = await _repository.find({ bug: id });
     if (!data) {
       throw new ApiError("Invalid ID", 400);
     }
