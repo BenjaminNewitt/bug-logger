@@ -18,37 +18,6 @@
           <div class="col-4">
             <button class="btn btn-danger">Close</button>
           </div>
-          <div class="col-12">
-            <h1>Notes</h1>
-            <form @submit.prevent="createNote">
-              <div class="form-group">
-                <label for="note-reported-by">reported by</label>
-                <input
-                  type="text"
-                  v-model="newNote.reportedBy"
-                  class="form-control"
-                  id="note-reported-by"
-                  placeholder="name..."
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <label for="note-content">Comment</label>
-                <input
-                  type="text"
-                  v-model="newNote.content"
-                  class="form-control"
-                  id="note-content"
-                  placeholder="comment here..."
-                  required
-                />
-              </div>
-              <button class="btn btn-success" type="submit">Submit comment</button>
-            </form>
-          </div>
-          <div class="col-12">
-            <p>{{ note }}</p>
-          </div>
         </div>
       </div>
     </main>
@@ -66,8 +35,7 @@ export default {
     return {
       newNote: {
         content: "",
-        reportedBy: "",
-        bug: this.$route.params.id
+        reportedBy: ""
       }
     };
   },
@@ -79,15 +47,15 @@ export default {
         bug: this.$route.params.id
       };
       this.$store.dispatch("createNote", note);
-      (this.note = ""), (this.reportedBy = "");
+      (this.content = ""), (this.reportedBy = "");
+    }
+  },
+  computed: {
+    bug() {
+      return this.$store.state.activeBug;
     },
-    computed: {
-      bug() {
-        return this.$store.state.activeBug;
-      },
-      note() {
-        return this.$store.state.notes;
-      }
+    note() {
+      return this.$store.state.notes;
     }
   }
 };
