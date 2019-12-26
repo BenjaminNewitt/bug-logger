@@ -77,18 +77,17 @@ export default {
         content: this.content,
         reportedBy: this.reportedBy,
         bug: this.$route.params.id
-    };
-    this.$store.dispatch("createNote", note);
-    this.note = "",
-    this.reportedBy = "";
-
-  },
-  computed: {
-    bug() {
-      return this.$store.state.activeBug;
+      };
+      this.$store.dispatch("createNote", note);
+      (this.note = ""), (this.reportedBy = "");
     },
-    note() {
-      return this.$store.state.notes;
+    computed: {
+      bug() {
+        return this.$store.state.activeBug;
+      },
+      note() {
+        return this.$store.state.notes;
+      }
     }
   }
 };
