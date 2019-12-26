@@ -26,7 +26,7 @@
       </div>
       <button class="btn btn-success" type="submit">Submit comment</button>
     </form>
-    <p>{{ notes }}</p>
+    {{ notes }}
   </div>
 </template>
 
