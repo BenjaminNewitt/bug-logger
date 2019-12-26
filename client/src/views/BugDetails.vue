@@ -60,7 +60,7 @@ export default {
   name: "BugDetails",
   mounted() {
     this.$store.dispatch("getBugById", this.$route.params.id);
-    this.$store.dispatch("getNotesByBugId", this.$route.params.id);
+    this.$store.dispatch("getNotes", this.$route.params.id);
   },
   data() {
     return {
@@ -73,9 +73,15 @@ export default {
   },
   methods: {
     createNote() {
-      let note = { ...this.newNote };
-      this.$store.dispatch("createNote", note);
-    }
+      let note = {
+        content: this.content,
+        reportedBy: this.reportedBy,
+        bug: this.$route.params.id
+    };
+    this.$store.dispatch("createNote", note);
+    this.note = "",
+    this.reportedBy = "";
+
   },
   computed: {
     bug() {
