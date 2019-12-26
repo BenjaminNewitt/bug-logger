@@ -26,25 +26,20 @@
 </template>
 
 <script>
-import Notes from "../components/notes";
+import Notes from "../components/Notes";
 export default {
   name: "BugDetails",
   mounted() {
     this.$store.dispatch("getBugById", this.$route.params.id);
-  },
-  data() {
-    return {
-      newNote: {
-        content: "",
-        reportedBy: ""
-      }
-    };
   },
   methods: {},
   computed: {
     bug() {
       return this.$store.state.activeBug;
     }
+  },
+  components: {
+    Notes
   }
 };
 </script>

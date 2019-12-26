@@ -26,6 +26,7 @@
       </div>
       <button class="btn btn-success" type="submit">Submit comment</button>
     </form>
+    <p>{{ notes }}</p>
   </div>
 </template>
 
@@ -45,6 +46,17 @@ export default {
       content: "",
       reportedBy: ""
     };
+  },
+  methods: {
+    createNote() {
+      let note = {
+        content: this.content,
+        reportedBy: this.reportedBy,
+        bug: this.$route.params.id
+      };
+      this.$store.dispatch("createNote", note);
+      (this.content = ""), (this.reportedBy = "");
+    }
   }
 };
 </script>
