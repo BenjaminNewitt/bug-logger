@@ -18,6 +18,7 @@
           <div class="col-4">
             <button class="btn btn-danger">Close</button>
           </div>
+          <notes />
         </div>
       </div>
     </main>
@@ -25,11 +26,11 @@
 </template>
 
 <script>
+import Notes from "../components/notes";
 export default {
   name: "BugDetails",
   mounted() {
     this.$store.dispatch("getBugById", this.$route.params.id);
-    this.$store.dispatch("getNotes", this.$route.params.id);
   },
   data() {
     return {
@@ -39,23 +40,10 @@ export default {
       }
     };
   },
-  methods: {
-    createNote() {
-      let note = {
-        content: this.content,
-        reportedBy: this.reportedBy,
-        bug: this.$route.params.id
-      };
-      this.$store.dispatch("createNote", note);
-      (this.content = ""), (this.reportedBy = "");
-    }
-  },
+  methods: {},
   computed: {
     bug() {
       return this.$store.state.activeBug;
-    },
-    note() {
-      return this.$store.state.notes;
     }
   }
 };

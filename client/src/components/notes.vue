@@ -1,5 +1,5 @@
 <template>
-  <div class="comments row-12">
+  <div class="notes">
     <h1>Notes</h1>
     <form @submit.prevent="createNote">
       <div class="form-group">
@@ -30,7 +30,23 @@
 </template>
 
 <script>
-export default {};
+export default {
+  name: "Notes",
+  mounted() {
+    this.$store.dispatch("getNotes", this.$route.params.id);
+  },
+  computed: {
+    notes() {
+      return this.$store.state.notes;
+    }
+  },
+  data() {
+    return {
+      content: "",
+      reportedBy: ""
+    };
+  }
+};
 </script>
 
 <style>
