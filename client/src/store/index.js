@@ -3,7 +3,7 @@ import Vuex from "vuex";
 import axios from "axios";
 
 let _api = axios.create({
-  baseURL: "http://localhost:3000/api/",
+  baseURL: "http://localhost:3000/api",
   timeout: 3000
 });
 Vue.use(Vuex);
@@ -42,8 +42,6 @@ export default new Vuex.Store({
     },
     async getNotes({ commit, dispatch }, id) {
       let res = await _api.get("bugs/" + id + "/notes");
-      console.log("notes res", res.data);
-
       commit("setNotes", res.data);
     },
     async createBug({ commit, dispatch }, bug) {
@@ -52,7 +50,6 @@ export default new Vuex.Store({
     },
     async createNote({ commit, dispatch }, note) {
       let res = await _api.post("notes", note);
-      console.log("new note", res.data);
       commit("addNote", res.data);
     }
   },
