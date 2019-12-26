@@ -34,7 +34,6 @@ export default new Vuex.Store({
   actions: {
     async getBugs({ commit, dispatch }) {
       let res = await _api.get("bugs");
-      console.log("bug", res.data);
       commit("setAllBugs", res.data);
     },
     async getBugById({ commit, dispatch }, id) {
@@ -42,8 +41,6 @@ export default new Vuex.Store({
       commit("setActiveBug", res.data);
     },
     async getNotesByBugId({ commit, dispatch }, id) {
-      console.log("note Id", id);
-
       let res = await _api.get("bugs/" + id + "/notes");
       console.log("notes res", res.data);
 
@@ -55,6 +52,7 @@ export default new Vuex.Store({
     },
     async createNote({ commit, dispatch }, note) {
       let res = await _api.post("notes", note);
+      console.log("new note", res.data);
       commit("addNote", res.data);
     }
   },
