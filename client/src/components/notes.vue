@@ -6,7 +6,7 @@
         <label for="note-reported-by">reported by</label>
         <input
           type="text"
-          v-model="newNote.reportedBy"
+          v-model="reportedBy"
           class="form-control"
           id="note-reported-by"
           placeholder="name..."
@@ -17,7 +17,7 @@
         <label for="note-content">Comment</label>
         <input
           type="text"
-          v-model="newNote.content"
+          v-model="content"
           class="form-control"
           id="note-content"
           placeholder="comment here..."
