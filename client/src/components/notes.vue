@@ -79,6 +79,9 @@ export default {
       };
       this.$store.dispatch("createNote", note);
       (this.content = ""), (this.reportedBy = "");
+    },
+    deleteNote() {
+      this.$store.dispatch("deleteNote", this.note.id);
     }
   }
 };
