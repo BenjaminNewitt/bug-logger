@@ -18,7 +18,7 @@
           <div class="col-4">
             <button class="btn btn-danger">Close</button>
           </div>
-          <notes />
+          <notes class="col-12"/>
         </div>
       </div>
     </main>

@@ -26,7 +26,17 @@
       </div>
       <button class="btn btn-success" type="submit">Submit comment</button>
     </form>
-    {{ notes }}
+    <div class="row">
+      <div class="col-3">
+        <h4>Name</h4>
+      </div>
+      <div class="col-6">
+        <h4>Message</h4>
+      </div>
+      <div class="col-3">
+        <h4>Delete</h4>
+      </div>
+    </div>
   </div>
 </template>
 
