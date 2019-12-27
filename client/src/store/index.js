@@ -51,6 +51,10 @@ export default new Vuex.Store({
     async createNote({ commit, dispatch }, note) {
       let res = await _api.post("notes", note);
       commit("addNote", res.data);
+    },
+    async deleteNote({ commit, dispatch }, id) {
+      await _api.delete("notes/" + id);
+      dispatch("getNotes");
     }
   },
   modules: {}
