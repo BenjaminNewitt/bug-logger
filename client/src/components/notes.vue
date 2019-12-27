@@ -37,7 +37,7 @@
         <h4>Delete</h4>
       </div>
       <div class="col-12">
-        <div class="row" v-for="note in notes" :key="note.id">
+        <div class="row note-text" v-for="note in notes" :key="note.id">
           <div class="col-2">
             <p>{{ note.reportedBy }}</p>
           </div>
@@ -85,4 +85,7 @@ export default {
 </script>
 
 <style>
+p {
+  font-size: 10pt;
+}
 </style>
