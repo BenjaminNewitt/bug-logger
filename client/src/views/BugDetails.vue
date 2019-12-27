@@ -18,7 +18,7 @@
           <div class="col-4">
             <button class="btn btn-danger">Close</button>
           </div>
-          <notes class="col-12"/>
+          <notes class="col-12" />
         </div>
       </div>
     </main>
@@ -36,6 +36,9 @@ export default {
   computed: {
     bug() {
       return this.$store.state.activeBug;
+    },
+    note() {
+      return this.$store.state.notes;
     }
   },
   components: {

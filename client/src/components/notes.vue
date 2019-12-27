@@ -36,6 +36,19 @@
       <div class="col-3">
         <h4>Delete</h4>
       </div>
+      <div class="col-12">
+        <div class="row" v-for="note in notes" :key="note.id">
+          <div class="col-3">
+            <p>{{ note.reportedBy }}</p>
+          </div>
+          <div class="col-6">
+            <p>{{ note.content }}</p>
+          </div>
+          <div class="col-3">
+            <p>Del</p>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -47,7 +60,7 @@ export default {
     this.$store.dispatch("getNotes", this.$route.params.id);
   },
   computed: {
-    notes() {
+    note() {
       return this.$store.state.notes;
     }
   },
