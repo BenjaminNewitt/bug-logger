@@ -27,24 +27,24 @@
       <button class="btn btn-success" type="submit">Submit comment</button>
     </form>
     <div class="row">
-      <div class="col-3">
+      <div class="col-2">
         <h4>Name</h4>
       </div>
-      <div class="col-6">
+      <div class="col-8">
         <h4>Message</h4>
       </div>
-      <div class="col-3">
+      <div class="col-2">
         <h4>Delete</h4>
       </div>
       <div class="col-12">
         <div class="row" v-for="note in notes" :key="note.id">
-          <div class="col-3">
+          <div class="col-2">
             <p>{{ note.reportedBy }}</p>
           </div>
-          <div class="col-6">
+          <div class="col-8">
             <p>{{ note.content }}</p>
           </div>
-          <div class="col-3">
+          <div class="col-2">
             <p>Del</p>
           </div>
         </div>
@@ -60,7 +60,7 @@ export default {
     this.$store.dispatch("getNotes", this.$route.params.id);
   },
   computed: {
-    note() {
+    notes() {
       return this.$store.state.notes;
     }
   },
