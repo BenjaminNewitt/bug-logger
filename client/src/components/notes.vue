@@ -45,7 +45,7 @@
             <p>{{ note.content }}</p>
           </div>
           <div class="col-2">
-            <p>Del</p>
+            <p @click="deleteNote">Del</p>
           </div>
         </div>
       </div>
@@ -81,7 +81,7 @@ export default {
       (this.content = ""), (this.reportedBy = "");
     },
     deleteNote() {
-      this.$store.dispatch("deleteNote", this.note.id);
+      this.$store.dispatch("deleteNote", this.id);
     }
   }
 };
