@@ -55,6 +55,10 @@ export default new Vuex.Store({
     async deleteNote({ commit, dispatch }, id) {
       await _api.delete("notes/" + id);
       dispatch("getNotes");
+    },
+    async deleteBug({ commit, dispatch }, id) {
+      await _api.delete("bugs/" + id);
+      // TODO check to see if anything needs to be updated
     }
   },
   modules: {}
