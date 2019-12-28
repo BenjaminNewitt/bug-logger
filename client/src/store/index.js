@@ -58,7 +58,7 @@ export default new Vuex.Store({
     },
     async deleteBug({ commit, dispatch }, id) {
       await _api.delete("bugs/" + id);
-      // TODO check to see if anything needs to be updated
+      dispatch("getBugById");
     }
   },
   modules: {}
