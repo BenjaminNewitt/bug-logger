@@ -16,7 +16,7 @@
             <p>{{ bug.description }}</p>
           </div>
           <div class="col-4">
-            <button class="btn btn-danger">Close</button>
+            <button class="button btn btn-danger" @click="closeBug">Close</button>
           </div>
           <notes class="col-12" />
         </div>
@@ -32,7 +32,12 @@ export default {
   mounted() {
     this.$store.dispatch("getBugById", this.$route.params.id);
   },
-  methods: {},
+  methods: {
+    closeBug() {
+      console.log("bugId", this.$route.params.id);
+      this.$store.dispatch("closeBug", this.$route.params.id);
+    }
+  },
   computed: {
     bug() {
       return this.$store.state.activeBug;
