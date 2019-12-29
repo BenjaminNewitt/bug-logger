@@ -35,7 +35,7 @@ export default class BugController {
 
   async getNotesByBugId(req, res, next) {
     try {
-      let data = await noteService.getNotesByBugId(req.params.Id);
+      let data = await noteService.getNotesByBugId(req.params.id);
       return res.send(data);
     } catch (error) {
       next(error);
