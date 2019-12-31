@@ -16,6 +16,7 @@
             <p>{{ bug.description }}</p>
           </div>
           <div class="col-4">
+            <button class="button btn btn-info">Edit</button>
             <button class="button btn btn-danger" @click="closeBug">Close</button>
           </div>
           <notes class="col-12" />
