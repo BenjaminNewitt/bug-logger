@@ -16,15 +16,19 @@
             <p>{{ bug.description }}</p>
           </div>
           <div class="col-4">
-            <button class="button btn btn-danger" @click="closeBug">Close</button>
+            <button
+              v-if="bug.closed === false"
+              class="button btn btn-danger"
+              @click="closeBug"
+            >Close</button>
           </div>
-          <div class="col-12">
+          <div v-if="bug.closed === false" class="col-12">
             <form>
               <div class="form-group">
                 <label for="bug-description"></label>
                 <textarea
                   class="form-control"
-                  v-model="newBug.description"
+                  v-model="bug.description"
                   id="bug-description"
                   rows="3"
                   placeholder="update description..."
