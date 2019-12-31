@@ -25,17 +25,17 @@
           <div v-if="bug.closed === false" class="col-12">
             <form>
               <div class="form-group">
-                <label for="bug-description"></label>
+                <label for="edited-bug-description"></label>
                 <textarea
                   class="form-control"
-                  v-model="bug.description"
-                  id="bug-description"
+                  v-model="editedBug.description"
+                  id="edited-bug-description"
                   rows="3"
                   placeholder="update description..."
                   required
                 ></textarea>
               </div>
-              <button class="button btn btn-info">Edit</button>
+              <button class="btn btn-info">Edit</button>
             </form>
           </div>
           <notes class="col-12" />
@@ -52,10 +52,19 @@ export default {
   mounted() {
     this.$store.dispatch("getBugById", this.$route.params.id);
   },
+  data() {
+    return {
+      editedBug: {
+        description: ""
+      }
+    };
+  },
   methods: {
     closeBug() {
-      console.log("bugId", this.$route.params.id);
       this.$store.dispatch("closeBug", this.$route.params.id);
+    },
+    editBug() {
+      this.$store.dispatch("editBug", this.$route.params.id);
     }
   },
   computed: {
