@@ -64,7 +64,10 @@ export default {
       this.$store.dispatch("closeBug", this.$route.params.id);
     },
     editBug() {
-      this.$store.dispatch("editBug", this.$route.params.id);
+      this.$store.dispatch("editBug", this.$route.params.id, editedBug);
+      this.editedBug = {
+        description: ""
+      };
     }
   },
   computed: {
