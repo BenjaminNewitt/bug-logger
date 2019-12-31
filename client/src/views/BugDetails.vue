@@ -23,13 +23,11 @@
             >Close</button>
           </div>
           <div v-if="bug.closed === false" class="col-12">
-            <form>
+            <form @submit.prevent="editBug">
               <div class="form-group">
-                <label for="edited-bug-description"></label>
                 <textarea
                   class="form-control"
-                  v-model="editedBug.description"
-                  id="edited-bug-description"
+                  v-model="description"
                   rows="3"
                   placeholder="update description..."
                   required
@@ -54,9 +52,7 @@ export default {
   },
   data() {
     return {
-      editedBug: {
-        description: ""
-      }
+      description: ""
     };
   },
   methods: {
@@ -64,10 +60,12 @@ export default {
       this.$store.dispatch("closeBug", this.$route.params.id);
     },
     editBug() {
-      this.$store.dispatch("editBug", this.$route.params.id, editedBug);
-      this.editedBug = {
-        description: ""
+      let editedBug = {
+        description: this.description
       };
+      console.log(editedBug);
+      this.$store.dispatch("editBug", this.$route.params.id, editedBug);
+      this.description = "";
     }
   },
   computed: {
