@@ -16,8 +16,23 @@
             <p>{{ bug.description }}</p>
           </div>
           <div class="col-4">
-            <button class="button btn btn-info">Edit</button>
             <button class="button btn btn-danger" @click="closeBug">Close</button>
+          </div>
+          <div class="col-12">
+            <form>
+              <div class="form-group">
+                <label for="bug-description"></label>
+                <textarea
+                  class="form-control"
+                  v-model="newBug.description"
+                  id="bug-description"
+                  rows="3"
+                  placeholder="update description..."
+                  required
+                ></textarea>
+              </div>
+              <button class="button btn btn-info">Edit</button>
+            </form>
           </div>
           <notes class="col-12" />
         </div>
