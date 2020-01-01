@@ -97,6 +97,8 @@ export default {
         description: "",
         closed: false
       };
+      console.log(this.id);
+      router.push({ name: "bugDetails", params: { id: this.id } });
     }
   },
   computed: {
