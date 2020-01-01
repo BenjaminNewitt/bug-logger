@@ -48,9 +48,9 @@ export default new Vuex.Store({
       let res = await _api.post("bugs", bug);
       commit("addBug", res.data);
     },
-    async editBug({ commit, dispatch }, id, editedBug) {
-      console.log(editedBug);
-      let res = await _api.put("bugs/" + id + "/" + editedBug);
+    async editBug({ commit, dispatch }, data) {
+      let res = await _api.put("bugs/" + data.id, data);
+      console.log(res);
     },
     async createNote({ commit, dispatch }, note) {
       let res = await _api.post("notes", note);

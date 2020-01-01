@@ -64,8 +64,7 @@ export default {
         description: this.description,
         id: this.$route.params.id
       };
-      console.log("edited bug from view", editedBug);
-      this.$store.dispatch("editBug", editedBug.id, editedBug.description);
+      this.$store.dispatch("editBug", editedBug);
       this.description = "";
     }
   },
