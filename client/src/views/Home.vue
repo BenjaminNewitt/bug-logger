@@ -97,13 +97,16 @@ export default {
         description: "",
         closed: false
       };
-      console.log(this.id);
-      router.push({ name: "bugDetails", params: { id: this.id } });
+      // TODO figure out method for getting to bugDetails view on bug creation
+      this.$router.push({ name: "bugDetails", params: { id: activeBug.id } });
     }
   },
   computed: {
     bugs() {
       return this.$store.state.bugs;
+    },
+    activeBug() {
+      return this.$store.state.activeBug;
     }
   },
   components: {
