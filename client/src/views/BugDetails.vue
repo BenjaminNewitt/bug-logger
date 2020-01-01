@@ -61,10 +61,11 @@ export default {
     },
     editBug() {
       let editedBug = {
-        description: this.description
+        description: this.description,
+        id: this.$route.params.id
       };
-      console.log(editedBug);
-      this.$store.dispatch("editBug", this.$route.params.id, editedBug);
+      console.log("edited bug from view", editedBug);
+      this.$store.dispatch("editBug", editedBug.id, editedBug.description);
       this.description = "";
     }
   },
