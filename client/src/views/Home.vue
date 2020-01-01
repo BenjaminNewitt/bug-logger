@@ -44,6 +44,10 @@
         <button class="btn btn-success" type="submit">Submit bug report</button>
       </form>
     </div>
+    <div class="col-4">
+      <input type="checkbox" class="form-check" id="checkbox" />
+      <p>hide closed bugs</p>
+    </div>
     <div class="col-10 m-auto">
       <div class="row">
         <div class="col-3">
