@@ -45,7 +45,8 @@
       </form>
     </div>
     <div class="col-4">
-      <input type="checkbox" class="form-check" id="checkbox" />
+      <input type="checkbox" id="checkbox" v-model="isFiltered" />
+      <label for="checkbox">{{ isFiltered }}</label>
       <p>hide closed bugs</p>
     </div>
     <div class="col-10 m-auto">
@@ -88,7 +89,8 @@ export default {
         title: "",
         reportedBy: "",
         description: ""
-      }
+      },
+      isFiltered: false
     };
   },
   methods: {
