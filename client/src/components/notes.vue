@@ -81,7 +81,22 @@ export default {
       (this.content = ""), (this.reportedBy = "");
     },
     deleteNote() {
-      this.$store.dispatch("deleteNote", this.id);
+      swal({
+        title: "Are you sure?",
+        text: "Once deleted, you will not be able to recover this comment",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true
+      }).then(willDelete => {
+        if (willDelete) {
+          swal("Your comment has been deleted", {
+            icon: "success"
+          });
+          this.$store.dispatch("deleteNote", this.id);
+        } else {
+          swal("Your comment has not been deleted");
+        }
+      });
     }
   }
 };
