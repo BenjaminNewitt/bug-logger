@@ -47,7 +47,6 @@ export default new Vuex.Store({
     async createBug({ commit, dispatch }, bug) {
       let res = await _api.post("bugs", bug);
       commit("addBug", res.data);
-      console.log(res.data);
       commit("setActiveBug", res.data);
     },
     async editBug({ commit, dispatch }, data) {
@@ -63,7 +62,6 @@ export default new Vuex.Store({
       dispatch("getNotes");
     },
     async closeBug({ commit, dispatch }, id) {
-      console.log("closed bug id from store", id);
       await _api.delete("bugs/" + id);
       dispatch("getBugById", id);
     }

@@ -57,7 +57,6 @@ export default {
   },
   methods: {
     closeBug() {
-      console.log("closed bug id", this.$route.params.id);
       this.$store.dispatch("closeBug", this.$route.params.id);
     },
     editBug() {
