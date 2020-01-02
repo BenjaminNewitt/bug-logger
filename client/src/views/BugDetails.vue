@@ -59,19 +59,18 @@ export default {
     closeBug() {
       swal({
         title: "Are you sure?",
-        text:
-          "Once deleted, you will not be able to recover this imaginary file!",
+        text: "Once closed, your bug cannot be reopened",
         icon: "warning",
         buttons: true,
         dangerMode: true
       }).then(willDelete => {
         if (willDelete) {
-          swal("Poof! Your imaginary file has been deleted!", {
+          swal("Your bug is now closed", {
             icon: "success"
           });
           this.$store.dispatch("closeBug", this.$route.params.id);
         } else {
-          swal("Your imaginary file is safe!");
+          swal("Your bug has not been closed");
         }
       });
     },
