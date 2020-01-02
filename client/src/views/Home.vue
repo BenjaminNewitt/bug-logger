@@ -101,7 +101,10 @@ export default {
         description: "",
         closed: false
       };
-      // TODO figure out method for getting to bugDetails view on bug creation
+      this.bugDetailsRoute();
+    },
+    bugDetailsRoute() {
+      let activeBug = this.activeBug;
       this.$router.push({ name: "bugDetails", params: { id: activeBug.id } });
     }
   },
