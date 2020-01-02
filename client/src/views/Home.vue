@@ -45,8 +45,7 @@
       </form>
     </div>
     <div class="col-4">
-      <input type="checkbox" id="checkbox" v-model="isFiltered" />
-      <label for="checkbox">{{ isFiltered }}</label>
+      <input type="checkbox" id="checkbox" v-model="isFiltered" @click="filterBugs" />
       <p>hide closed bugs</p>
     </div>
     <div class="col-10 m-auto">
@@ -108,6 +107,11 @@ export default {
     bugDetailsRoute() {
       let activeBug = this.activeBug;
       this.$router.push({ name: "bugDetails", params: { id: activeBug.id } });
+    },
+    filterBugs() {
+      if (isFiltered === true) {
+        this.bugs.filter(bug => bug.closed === true);
+      }
     }
   },
   computed: {
