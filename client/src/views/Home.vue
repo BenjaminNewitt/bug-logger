@@ -107,12 +107,6 @@ export default {
     bugDetailsRoute() {
       let activeBug = this.activeBug;
       this.$router.push({ name: "bugDetails", params: { id: activeBug.id } });
-    },
-    checkbox(checked) {
-      if (checked === false) {
-        console.log("bugs in checkbox", this.bugs);
-        this.filterClosedBugs;
-      }
     }
   },
   computed: {
@@ -121,9 +115,6 @@ export default {
     },
     activeBug() {
       return this.$store.state.activeBug;
-    },
-    filterClosedBugs() {
-      this.bugs.filter(b => !bug.closed);
     }
   },
   components: {
