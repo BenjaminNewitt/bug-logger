@@ -57,7 +57,23 @@ export default {
   },
   methods: {
     closeBug() {
-      this.$store.dispatch("closeBug", this.$route.params.id);
+      swal({
+        title: "Are you sure?",
+        text:
+          "Once deleted, you will not be able to recover this imaginary file!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true
+      }).then(willDelete => {
+        if (willDelete) {
+          swal("Poof! Your imaginary file has been deleted!", {
+            icon: "success"
+          });
+          this.$store.dispatch("closeBug", this.$route.params.id);
+        } else {
+          swal("Your imaginary file is safe!");
+        }
+      });
     },
     editBug() {
       let editedBug = {
