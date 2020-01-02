@@ -45,7 +45,7 @@
       </form>
     </div>
     <div class="col-4">
-      <input type="checkbox" id="checkbox" v-model="checked" @click="checkbox(checked)" />
+      <input type="checkbox" id="checkbox" v-model="checked" />
       <p>hide closed bugs</p>
     </div>
     <div class="col-10 m-auto">
