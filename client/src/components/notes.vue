@@ -81,6 +81,10 @@ export default {
       (this.content = ""), (this.reportedBy = "");
     },
     deleteNote() {
+      let note = this.$store.state.notes.find(
+        note => note.bug == this.$route.params.id
+      );
+      console.log(note);
       swal({
         title: "Are you sure?",
         text: "Once deleted, you will not be able to recover this comment",
@@ -93,7 +97,7 @@ export default {
             icon: "success"
           });
           // TODO look at how to pass entire note object
-          this.$store.dispatch("deleteNote");
+          this.$store.dispatch("deleteNote", note);
         } else {
           swal("Your comment has not been deleted");
         }

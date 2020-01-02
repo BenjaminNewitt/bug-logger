@@ -57,9 +57,10 @@ export default new Vuex.Store({
       let res = await _api.post("notes", note);
       commit("addNote", res.data);
     },
-    async deleteNote({ commit, dispatch }, id) {
-      await _api.delete("notes/" + id);
+    async deleteNote({ commit, dispatch }, note) {
+      await _api.delete("notes/" + note.id);
       // TODO update dispatch to receive bugId
+      dispatch("getNotes", note.bug);
     },
     async closeBug({ commit, dispatch }, id) {
       await _api.delete("bugs/" + id);
