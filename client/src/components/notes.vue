@@ -92,7 +92,8 @@ export default {
           swal("Your comment has been deleted", {
             icon: "success"
           });
-          this.$store.dispatch("deleteNote", this.id);
+          // TODO look at how to pass entire note object
+          this.$store.dispatch("deleteNote");
         } else {
           swal("Your comment has not been deleted");
         }
