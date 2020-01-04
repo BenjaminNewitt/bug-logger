@@ -9,16 +9,16 @@
     <div class="col-8 mr-auto ml-auto border rounded">
       <div class="row border-bottom">
         <div class="col-3">
-          <h4>Title</h4>
+          <h6>Title</h6>
         </div>
         <div class="col-3">
-          <h4>Reported By</h4>
+          <h6>Reported By</h6>
         </div>
         <div class="col-3">
-          <h4>Status</h4>
+          <h6>Status</h6>
         </div>
         <div class="col-3">
-          <h4>Last Modified</h4>
+          <h6>Last Modified</h6>
         </div>
       </div>
       <div class="row">
@@ -27,7 +27,7 @@
         </div>
       </div>
     </div>
-    <div class="col-3 m-auto border rounded">
+    <div class="col-3 mr-auto ml-auto border rounded">
       <form @submit.prevent="createBug">
         <div class="form-group">
           <label for="bug-title">bug title</label>
