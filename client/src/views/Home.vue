@@ -6,6 +6,27 @@
     </div>
   </header>
   <body class="row">
+    <div class="col-8 m-auto border rounded">
+      <div class="row border-bottom">
+        <div class="col-3">
+          <h4>Title</h4>
+        </div>
+        <div class="col-3">
+          <h4>Reported By</h4>
+        </div>
+        <div class="col-3">
+          <h4>Status</h4>
+        </div>
+        <div class="col-3">
+          <h4>Last Modified</h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12" v-for="bug in bugs" :key="bug.id">
+          <bug-component :bugData="bug" />
+        </div>
+      </div>
+    </div>
     <div class="col-3 m-auto border rounded">
       <form @submit.prevent="createBug">
         <div class="form-group">
@@ -43,27 +64,6 @@
         </div>
         <button class="btn btn-success" type="submit">Submit bug report</button>
       </form>
-    </div>
-    <div class="col-8 m-auto border rounded">
-      <div class="row border-bottom">
-        <div class="col-3">
-          <h4>Title</h4>
-        </div>
-        <div class="col-3">
-          <h4>Reported By</h4>
-        </div>
-        <div class="col-3">
-          <h4>Status</h4>
-        </div>
-        <div class="col-3">
-          <h4>Last Modified</h4>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-12" v-for="bug in bugs" :key="bug.id">
-          <bug-component :bugData="bug" />
-        </div>
-      </div>
     </div>
   </body>
   <footer></footer>
