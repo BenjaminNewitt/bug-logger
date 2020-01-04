@@ -6,7 +6,7 @@
     </div>
   </header>
   <body class="row">
-    <div class="col-3 m-auto">
+    <div class="col-3 m-auto border rounded">
       <form @submit.prevent="createBug">
         <div class="form-group">
           <label for="bug-title">bug title</label>
@@ -44,8 +44,8 @@
         <button class="btn btn-success" type="submit">Submit bug report</button>
       </form>
     </div>
-    <div class="col-6 m-auto">
-      <div class="row">
+    <div class="col-8 m-auto border rounded">
+      <div class="row border-bottom">
         <div class="col-3">
           <h4>Title</h4>
         </div>
