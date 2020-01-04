@@ -6,7 +6,7 @@
     </div>
   </header>
   <body class="row">
-    <div class="col-6">
+    <div class="col-3 m-auto">
       <form @submit.prevent="createBug">
         <div class="form-group">
           <label for="bug-title">bug title</label>
@@ -44,11 +44,7 @@
         <button class="btn btn-success" type="submit">Submit bug report</button>
       </form>
     </div>
-    <div class="col-4">
-      <input type="checkbox" id="checkbox" v-model="checked" />
-      <p>hide closed bugs</p>
-    </div>
-    <div class="col-10 m-auto">
+    <div class="col-6 m-auto">
       <div class="row">
         <div class="col-3">
           <h4>Title</h4>
@@ -88,8 +84,7 @@ export default {
         title: "",
         reportedBy: "",
         description: ""
-      },
-      checked: false
+      }
     };
   },
   methods: {
