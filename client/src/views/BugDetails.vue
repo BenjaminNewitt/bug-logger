@@ -4,13 +4,12 @@
       <div class="col-12"></div>
     </header>
     <main class="row">
-      <div class="col-10 mx-auto">
+      <div class="col-5">
         <div class="row">
           <div class="col-12">
-            <p>Title</p>
-            <h1>{{bug.title}}</h1>
+            <h4>{{bug.title}}</h4>
             <p>Reported by</p>
-            <h2>{{bug.reportedBy}}</h2>
+            <h3>{{bug.reportedBy}}</h3>
           </div>
           <div class="col-12 border">
             <p>{{ bug.description }}</p>
@@ -22,22 +21,23 @@
               @click="closeBug"
             >Close</button>
           </div>
-          <div v-if="bug.closed === false" class="col-12">
-            <form @submit.prevent="editBug">
-              <div class="form-group">
-                <textarea
-                  class="form-control"
-                  v-model="description"
-                  rows="3"
-                  placeholder="update description..."
-                  required
-                ></textarea>
-              </div>
-              <button class="btn btn-info">Edit</button>
-            </form>
-          </div>
-          <notes class="col-12" />
         </div>
+      </div>
+      <notes class="col-5" />
+
+      <div v-if="bug.closed === false" class="col-6">
+        <form @submit.prevent="editBug">
+          <div class="form-group">
+            <textarea
+              class="form-control"
+              v-model="description"
+              rows="3"
+              placeholder="update description..."
+              required
+            ></textarea>
+          </div>
+          <button class="btn btn-info">Edit</button>
+        </form>
       </div>
     </main>
   </div>
