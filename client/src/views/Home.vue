@@ -2,11 +2,11 @@
 <main class="home container-fluid">
   <header class="row">
     <div class="col-12 col-md-6">
-      <h1>Current Bugs</h1>
+      <h2>Current Bugs</h2>
     </div>
   </header>
   <body class="row">
-    <div class="col-8 m-auto border rounded">
+    <div class="col-8 mr-auto ml-auto border rounded">
       <div class="row border-bottom">
         <div class="col-3">
           <h4>Title</h4>
@@ -62,7 +62,7 @@
             required
           ></textarea>
         </div>
-        <button class="btn btn-success" type="submit">Submit bug report</button>
+        <button class="btn btn-success mb-2" type="submit">Submit bug report</button>
       </form>
     </div>
   </body>
