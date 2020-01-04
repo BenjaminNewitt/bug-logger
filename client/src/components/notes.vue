@@ -26,11 +26,11 @@
       </div>
       <button class="btn btn-success" type="submit">Submit comment</button>
     </form>
-    <div class="row">
+    <div class="row text-center">
       <div class="col-2">
         <h4>Name</h4>
       </div>
-      <div class="col-8">
+      <div class="col-7">
         <h4>Message</h4>
       </div>
       <div class="col-2">
