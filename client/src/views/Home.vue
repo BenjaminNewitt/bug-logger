@@ -1,15 +1,11 @@
 <template>
 <main class="home container-fluid">
-  <header class="row">
-    <div class="col-6">
-      <h2>Current Bugs</h2>
-    </div>
-  </header>
+  <header></header>
   <body class="row">
-    <div class="col-8 mr-auto ml-auto border rounded">
+    <div class="col-10 m-auto border rounded">
       <div class="row border-bottom">
         <div class="col-3">
-          <h6>Title</h6>
+          <h6>Bug</h6>
         </div>
         <div class="col-3">
           <h6>Reported By</h6>
@@ -27,42 +23,36 @@
         </div>
       </div>
     </div>
-    <div class="col-3 mr-auto ml-auto border rounded">
-      <form @submit.prevent="createBug">
-        <div class="form-group">
-          <label for="bug-title">bug title</label>
+    <div class="col-10 m-auto border rounded">
+      <form @submit.prevent="createBug" class="row">
+        <div class="form-group col-3">
           <input
             type="text"
             v-model="newBug.title"
             class="form-control"
-            id="bug-title"
             placeholder="title..."
             required
           />
         </div>
-        <div class="form-group">
-          <label for="bug-reported-by">reported by</label>
+        <div class="form-group col-3">
           <input
             type="text"
             v-model="newBug.reportedBy"
             class="form-control"
-            id="bug-reported-by"
             placeholder="name..."
             required
           />
         </div>
-        <div class="form-group">
-          <label for="bug-description">bug description</label>
+        <div class="form-group col-12">
           <textarea
             class="form-control"
             v-model="newBug.description"
-            id="bug-description"
             rows="3"
             placeholder="bug description..."
             required
           ></textarea>
         </div>
-        <button class="btn btn-success mb-2" type="submit">Submit bug report</button>
+        <button class="btn btn-success mb-2 col-4 offset-4" type="submit">Submit bug report</button>
       </form>
     </div>
   </body>
@@ -72,7 +62,8 @@
 
 <script>
 // @ is an alias to /src
-import ReportBugComponent from "@/components/ReportBug";
+
+import BugComponent from "@/components/Bug";
 export default {
   name: "bug",
   mounted() {
