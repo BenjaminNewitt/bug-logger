@@ -5,7 +5,7 @@
       <h2>Current Bugs</h2>
     </div>
     <div class="col-3">
-      <button class="btn btn-info">Report Bug</button>
+      <button class="btn btn-info" data-toggle="modal" data-target="#report-bug">Report Bug</button>
     </div>
   </header>
   <body class="row">
@@ -75,6 +75,7 @@
 
 <script>
 // @ is an alias to /src
+import ReportBugComponent from "@/components/ReportBug";
 import BugComponent from "@/components/Bug";
 export default {
   name: "bug",
