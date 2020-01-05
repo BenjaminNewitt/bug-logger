@@ -45,7 +45,7 @@
             <p>{{ note.content }}</p>
           </div>
           <div class="col-2">
-            <p @click="deleteNote">Del</p>
+            <i @click="deleteNote" class="fas fa-trash"></i>
           </div>
         </div>
       </div>
