@@ -1,8 +1,11 @@
 <template>
 <main class="home container-fluid">
   <header class="row">
-    <div class="col-12 col-md-6">
+    <div class="col-6">
       <h2>Current Bugs</h2>
+    </div>
+    <div class="col-3">
+      <button class="btn btn-info">Report Bug</button>
     </div>
   </header>
   <body class="row">
