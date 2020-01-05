@@ -4,10 +4,6 @@
     <div class="col-6">
       <h2>Current Bugs</h2>
     </div>
-    <div class="col-3">
-      <button class="btn btn-info" data-toggle="modal" data-target="#report-bug">Report Bug</button>
-      <report-bug-component id="report-bug" :bugData="bug"></report-bug-component>
-    </div>
   </header>
   <body class="row">
     <div class="col-8 mr-auto ml-auto border rounded">
@@ -77,7 +73,6 @@
 <script>
 // @ is an alias to /src
 import ReportBugComponent from "@/components/ReportBug";
-import BugComponent from "@/components/Bug";
 export default {
   name: "bug",
   mounted() {
