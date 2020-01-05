@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     <div class="container-fluid">
-      <div class="row d-flex flex-row-reverse">
+      <div class="row d-flex flex-row-reverse bg-success">
         <div id="nav" class="col-3 text-right">
-          <router-link to="/">Report</router-link>
+          <router-link to="/" class="text-white">Report</router-link>
         </div>
       </div>
     </div>

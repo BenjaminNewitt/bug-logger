@@ -111,4 +111,7 @@ export default {
 p {
   font-size: 10pt;
 }
+i {
+  cursor: pointer;
+}
 </style>
