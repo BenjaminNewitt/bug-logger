@@ -14,6 +14,7 @@
         </div>
         <div class="col-3">
           <h6>Status</h6>
+          <input type="checkbox" id="checkbox" v-model="checked" @change="filterBugs" /> filter
         </div>
         <div class="col-3">
           <h6>Last Modified</h6>
@@ -77,7 +78,8 @@ export default {
         title: "",
         reportedBy: "",
         description: ""
-      }
+      },
+      checked: false
     };
   },
   methods: {
@@ -95,6 +97,11 @@ export default {
     bugDetailsRoute() {
       let activeBug = this.activeBug;
       this.$router.push({ name: "bugDetails", params: { id: activeBug.id } });
+    },
+    filterBugs() {
+      if (this.checked == true) {
+        this.filterBugs;
+      }
     }
   },
   computed: {
@@ -103,6 +110,9 @@ export default {
     },
     activeBug() {
       return this.$store.state.activeBug;
+    },
+    filteredBugs() {
+      this.bugs.filter(b => !bug.closed);
     }
   },
   components: {
