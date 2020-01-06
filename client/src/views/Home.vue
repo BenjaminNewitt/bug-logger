@@ -25,7 +25,7 @@
         </div>
       </div>
     </div>
-    <div class="col-10 m-auto border rounded">
+    <div class="col-10 mr-auto ml-auto mt-2 border rounded">
       <form @submit.prevent="createBug" class="row">
         <div class="form-group col-3">
           <input

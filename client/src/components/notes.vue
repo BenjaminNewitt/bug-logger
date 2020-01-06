@@ -1,15 +1,15 @@
 <template>
   <div class="notes border rounded">
-    <h4>Notes</h4>
+    <h5>Notes</h5>
     <div class="row text-center">
       <div class="col-2">
-        <h4>Name</h4>
+        <h6>Name</h6>
       </div>
       <div class="col-7">
-        <h4>Message</h4>
+        <h6>Message</h6>
       </div>
       <div class="col-2">
-        <h4>Delete</h4>
+        <h6>Delete</h6>
       </div>
       <div class="col-12 border rounded" id="notes-container">
         <div class="row note-text" v-for="note in notes" :key="note.id">
@@ -115,10 +115,5 @@ p {
 }
 i {
   cursor: pointer;
-}
-#notes-container {
-  width: auto;
-  max-height: 20vh;
-  overflow: auto;
 }
 </style>
