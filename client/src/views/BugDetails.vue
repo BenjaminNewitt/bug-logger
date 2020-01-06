@@ -6,7 +6,7 @@
     <main class="row">
       <div class="col-10 m-auto">
         <div class="row">
-          <div class="col-12">
+          <div class="col-6">
             <h4>{{bug.title}}</h4>
             <p>Reported by: {{ bug.reportedBy }}</p>
           </div>
@@ -14,8 +14,8 @@
             <p>{{ bug.description }}</p>
           </div>
           <div v-if="bug.closed === false" class="col-12">
-            <form @submit.prevent="editBug">
-              <div class="form-group">
+            <form @submit.prevent="editBug" class="row">
+              <div class="form-group col-6">
                 <textarea
                   class="form-control"
                   v-model="description"
@@ -24,8 +24,9 @@
                   required
                 ></textarea>
               </div>
-
-              <button class="btn btn-info btn-sm">Edit</button>
+              <div class="col-3">
+                <button class="btn btn-info btn-sm">Edit</button>
+              </div>
             </form>
           </div>
           <div class="col-4">
