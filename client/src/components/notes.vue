@@ -1,6 +1,6 @@
 <template>
   <div class="notes">
-    <h1>Notes</h1>
+    <h4>Notes</h4>
     <form @submit.prevent="createNote">
       <div class="form-group">
         <label for="note-reported-by">reported by</label>

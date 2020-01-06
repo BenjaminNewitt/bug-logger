@@ -8,8 +8,7 @@
         <div class="row">
           <div class="col-12">
             <h4>{{bug.title}}</h4>
-            <p>Reported by</p>
-            <h3>{{bug.reportedBy}}</h3>
+            <p>Reported by: {{ bug.reportedBy }}</p>
           </div>
           <div class="col-12 border">
             <p>{{ bug.description }}</p>
@@ -17,9 +16,9 @@
           <div class="col-4">
             <button
               v-if="bug.closed === false"
-              class="button btn btn-danger"
+              class="button btn btn-danger btn-sm"
               @click="closeBug"
-            >Close</button>
+            >Close Bug</button>
           </div>
         </div>
       </div>
@@ -36,7 +35,7 @@
               required
             ></textarea>
           </div>
-          <button class="btn btn-info">Edit</button>
+          <button class="btn btn-info btn-sm">Edit</button>
         </form>
       </div>
     </main>
