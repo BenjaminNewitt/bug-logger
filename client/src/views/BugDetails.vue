@@ -1,10 +1,8 @@
 <template>
   <div class="bug-details container-fluid">
-    <header class="row">
-      <div class="col-12"></div>
-    </header>
+    <header></header>
     <main class="row">
-      <div class="col-5">
+      <div class="col-5 mr-auto ml-auto">
         <div class="row">
           <div class="col-12">
             <h4>{{bug.title}}</h4>
@@ -12,6 +10,21 @@
           </div>
           <div class="col-12 border">
             <p>{{ bug.description }}</p>
+          </div>
+          <div v-if="bug.closed === false" class="col-12">
+            <form @submit.prevent="editBug">
+              <div class="form-group">
+                <textarea
+                  class="form-control"
+                  v-model="description"
+                  rows="3"
+                  placeholder="update description..."
+                  required
+                ></textarea>
+              </div>
+
+              <button class="btn btn-info btn-sm">Edit</button>
+            </form>
           </div>
           <div class="col-4">
             <button
@@ -22,22 +35,8 @@
           </div>
         </div>
       </div>
-      <notes class="col-5" />
 
-      <div v-if="bug.closed === false" class="col-6">
-        <form @submit.prevent="editBug">
-          <div class="form-group">
-            <textarea
-              class="form-control"
-              v-model="description"
-              rows="3"
-              placeholder="update description..."
-              required
-            ></textarea>
-          </div>
-          <button class="btn btn-info btn-sm">Edit</button>
-        </form>
-      </div>
+      <notes class="col-5 mr-auto ml-auto" />
     </main>
   </div>
 </template>
