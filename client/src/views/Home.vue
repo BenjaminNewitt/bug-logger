@@ -27,7 +27,7 @@
     </div>
     <div class="col-10 mr-auto ml-auto mt-2 border rounded">
       <form @submit.prevent="createBug" class="row">
-        <div class="form-group col-3">
+        <div class="form-group col-3 mt-2">
           <input
             type="text"
             v-model="newBug.title"
@@ -36,7 +36,7 @@
             required
           />
         </div>
-        <div class="form-group col-3">
+        <div class="form-group col-3 mt-2">
           <input
             type="text"
             v-model="newBug.reportedBy"

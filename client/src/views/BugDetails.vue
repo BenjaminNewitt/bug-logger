@@ -10,17 +10,17 @@
             <h4>{{bug.title}}</h4>
             <p>Reported by: {{ bug.reportedBy }}</p>
           </div>
-          <div class="col-12 border">
-            <p>{{ bug.description }}</p>
-          </div>
-          <div class="col-2 offset-10 mt-2">
+          <div class="col-2 offset-4 mt-2">
             <button
               v-if="bug.closed === false"
               class="button btn btn-danger btn-sm"
               @click="closeBug"
             >Close Bug</button>
           </div>
-          <div v-if="bug.closed === false" class="col-12">
+          <div class="col-12 border">
+            <p>{{ bug.description }}</p>
+          </div>
+          <div v-if="bug.closed === false" class="col-12 mt-2">
             <form @submit.prevent="editBug" class="row">
               <div class="form-group col-6">
                 <textarea

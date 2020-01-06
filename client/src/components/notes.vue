@@ -11,7 +11,7 @@
       <div class="col-2">
         <h6>Delete</h6>
       </div>
-      <div class="col-12 border rounded" id="notes-container">
+      <div class="col-12 mb-2">
         <div class="row note-text" v-for="note in notes" :key="note.id">
           <div class="col-2">
             <p>{{ note.reportedBy }}</p>
@@ -26,29 +26,19 @@
       </div>
     </div>
     <form @submit.prevent="createNote" class="row border rounded">
-      <div class="form-group col-3">
-        <label for="note-reported-by">reported by</label>
-        <input
-          type="text"
-          v-model="reportedBy"
-          class="form-control"
-          id="note-reported-by"
-          placeholder="name..."
-          required
-        />
+      <div class="form-group col-3 mt-2">
+        <input type="text" v-model="reportedBy" class="form-control" placeholder="name..." required />
       </div>
-      <div class="form-group col-3">
-        <label for="note-content">Comment</label>
+      <div class="form-group col-3 mt-2">
         <input
           type="text"
           v-model="content"
           class="form-control"
-          id="note-content"
           placeholder="comment here..."
           required
         />
       </div>
-      <div class="col-3">
+      <div class="col-12">
         <button class="btn btn-success btn-sm" type="submit">Submit comment</button>
       </div>
     </form>
