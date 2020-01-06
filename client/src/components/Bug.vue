@@ -11,7 +11,7 @@
         <p v-if="bugData.closed === false">open</p>
         <p v-if="bugData.closed === true">closed</p>
       </div>
-      <div class="col-3">{{ bugData.updatedAt }}</div>
+      <div class="col-3">{{ bugData.updatedAt.split('T')[0]}}</div>
     </router-link>
   </div>
 </template>
