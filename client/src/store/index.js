@@ -51,7 +51,7 @@ export default new Vuex.Store({
     },
     async editBug({ commit, dispatch }, data) {
       let res = await _api.put("bugs/" + data.id, data);
-      // TODO check if edited bug needs a commit
+      dispatch("getBugById", data.id);
     },
     async createNote({ commit, dispatch }, note) {
       let res = await _api.post("notes", note);
