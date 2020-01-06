@@ -1,8 +1,10 @@
 <template>
   <div class="bug-details container-fluid">
-    <header></header>
+    <header class="row">
+      <div class="col-12 m-2"></div>
+    </header>
     <main class="row">
-      <div class="col-5 mr-auto ml-auto">
+      <div class="col-10 m-auto">
         <div class="row">
           <div class="col-12">
             <h4>{{bug.title}}</h4>
@@ -36,7 +38,7 @@
         </div>
       </div>
 
-      <notes class="col-5 mr-auto ml-auto" />
+      <notes class="col-10 m-auto" />
     </main>
   </div>
 </template>

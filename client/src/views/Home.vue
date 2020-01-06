@@ -1,6 +1,8 @@
 <template>
 <main class="home container-fluid">
-  <header></header>
+  <header class="row">
+    <div class="col-12 mt-2"></div>
+  </header>
   <body class="row">
     <div class="col-10 m-auto border rounded">
       <div class="row border-bottom">

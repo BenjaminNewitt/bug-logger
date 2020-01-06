@@ -1,5 +1,5 @@
 <template>
-  <div class="notes">
+  <div class="notes border rounded">
     <h4>Notes</h4>
     <form @submit.prevent="createNote">
       <div class="form-group">
@@ -36,7 +36,7 @@
       <div class="col-2">
         <h4>Delete</h4>
       </div>
-      <div class="col-12">
+      <div class="col-12 border rounded">
         <div class="row note-text" v-for="note in notes" :key="note.id">
           <div class="col-2">
             <p>{{ note.reportedBy }}</p>
