@@ -1,14 +1,14 @@
 <template>
   <div class="notes border rounded">
     <h5>Notes</h5>
-    <div class="row text-center">
+    <div class="row text">
       <div class="col-2">
         <h6>Name</h6>
       </div>
       <div class="col-7">
         <h6>Message</h6>
       </div>
-      <div class="col-2">
+      <div class="col-2 text-right">
         <h6>Delete</h6>
       </div>
       <div class="col-12 mb-2">
@@ -19,7 +19,7 @@
           <div class="col-8">
             <p>{{ note.content }}</p>
           </div>
-          <div class="col-2">
+          <div class="col-2 text-left">
             <i @click="deleteNote" class="fas fa-trash"></i>
           </div>
         </div>
