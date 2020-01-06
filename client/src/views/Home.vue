@@ -22,7 +22,8 @@
       </div>
       <div class="row">
         <div class="col-12" v-for="bug in bugs" :key="bug.id">
-          <bug-component :bugData="bug" />
+          <div v-if="bug.closed == true && checked == true"></div>
+          <bug-component v-else :bugData="bug" />
         </div>
       </div>
     </div>
@@ -105,9 +106,6 @@ export default {
     },
     activeBug() {
       return this.$store.state.activeBug;
-    },
-    filteredBugs() {
-      this.bugs.filter(b => !bug.closed);
     }
   },
   components: {
